@@ -18,7 +18,7 @@ RUN pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av runpod 
 
 RUN git clone https://github.com/camenduru/ComfyUI /content/ComfyUI
 
-RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/470847 -d /content/ComfyUI/models/checkpoints -o raemuXL_v35Lightning.safetensors
+RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/camenduru/TostModels/resolve/main/models/checkpoints/raemuXL_v35Lightning.safetensors -d /content/ComfyUI/models/checkpoints -o raemuXL_v35Lightning.safetensors
 
 COPY ./worker_runpod.py /content/ComfyUI/worker_runpod.py
 WORKDIR /content/ComfyUI
