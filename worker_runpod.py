@@ -12,7 +12,7 @@ web_uri = os.getenv('com_camenduru_web_uri')
 web_token = os.getenv('com_camenduru_web_token')
 
 with torch.inference_mode():
-    model_patcher, clip, vae, clipvision = load_checkpoint_guess_config("/content/ComfyUI/models/checkpoints/raemuXL_v35Lightning.safetensors", output_vae=True, output_clip=True, embedding_directory=None)
+    model_patcher, clip, vae, clipvision = load_checkpoint_guess_config("/content/ComfyUI/models/checkpoints/model.safetensors", output_vae=True, output_clip=True, embedding_directory=None)
 
 @torch.inference_mode()
 def generate(input):
