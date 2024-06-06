@@ -1,5 +1,6 @@
 import os, json, requests, runpod
 
+import random
 import torch
 import numpy as np
 from PIL import Image
@@ -28,14 +29,13 @@ def generate(input):
     scheduler = values['scheduler']
 
     latent = {"samples":torch.zeros([1, 4, height // 8, width // 8])}
-    prompt= "(masterpiece, best quality, very aesthetic, ultra detailed), intricate details, 1girl, esdeath, akame ga kill!, blue eyes, blue hair, military uniform, hat, ice, sitting, sitting on throne, crossed legs, snow, white footwear, thigh boots,"
-    cond, pooled = clip.encode_from_tokens(clip.tokenize(prompt), return_pooled=True)
+    cond, pooled = clip.encode_from_tokens(clip.tokenize(positive_prompt), return_pooled=True)
     cond = [[cond, {"pooled_output": pooled}]]
-    negative_prompt = "(worst quality, low quality, very displeasing, lowres), (interlocked fingers, badly drawn hands and fingers, anatomically incorrect hands), blurry, watermark,"
     n_cond, n_pooled = clip.encode_from_tokens(clip.tokenize(negative_prompt), return_pooled=True)
     n_cond = [[n_cond, {"pooled_output": n_pooled}]]
     if seed == 0:
         seed = random.randint(0, 18446744073709551615)
+    print(seed)
     sample = nodes.common_ksampler(model=model_patcher, 
                             seed=seed, 
                             steps=steps, 

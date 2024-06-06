@@ -6,6 +6,6 @@
     "cfg": 2.0,
     "sampler_name": "euler",
     "scheduler": "normal",
-    "width": 1024,
-    "height": 1024
+    "width": 832,
+    "height": 1152
 }
