@@ -1,7 +1,7 @@
 {
     "positive_prompt": "(masterpiece, best quality, very aesthetic, ultra detailed), intricate details, 1girl, esdeath, akame ga kill!, blue eyes, blue hair, military uniform, hat, ice, sitting, sitting on throne, crossed legs, snow, white footwear, thigh boots,",
     "negative_prompt": "(worst quality, low quality, very displeasing, lowres), (interlocked fingers, badly drawn hands and fingers, anatomically incorrect hands), blurry, watermark,",
-    "seed": 432429793,
+    "seed": 0,
     "steps": 9,
     "cfg": 2.0,
     "sampler_name": "euler",

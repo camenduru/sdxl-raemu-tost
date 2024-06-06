@@ -34,6 +34,8 @@ def generate(input):
     negative_prompt = "(worst quality, low quality, very displeasing, lowres), (interlocked fingers, badly drawn hands and fingers, anatomically incorrect hands), blurry, watermark,"
     n_cond, n_pooled = clip.encode_from_tokens(clip.tokenize(negative_prompt), return_pooled=True)
     n_cond = [[n_cond, {"pooled_output": n_pooled}]]
+    if seed == 0:
+        seed = random.randint(0, 18446744073709551615)
     sample = nodes.common_ksampler(model=model_patcher, 
                             seed=seed, 
                             steps=steps, 
