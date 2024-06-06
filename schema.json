@@ -24,7 +24,7 @@
       },
       "seed": {
         "type": "integer",
-        "description": "Seed"
+        "description": "Seed (if 0 random)"
       },
       "steps": {
         "type": "integer",
